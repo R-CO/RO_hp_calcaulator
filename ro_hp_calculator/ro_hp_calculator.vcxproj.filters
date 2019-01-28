@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{bebe8221-12b5-4a88-a49c-a28cd98d9193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{ff0ca995-da6a-4406-9189-9383a7748032}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GUI">
+      <UniqueIdentifier>{6283f3f0-dabd-4fec-b3d9-ebee45c48303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI">
+      <UniqueIdentifier>{5631a40c-6e01-46f8-95ea-ecb54c128584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GUI\wxFormBuilder">
+      <UniqueIdentifier>{d6c96fa8-0862-4fb9-9b1c-ac172087d7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\GUI\wxFormBuilder">
+      <UniqueIdentifier>{3980062d-f9c6-4dc8-9763-ee11c8d463cc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ro_hp_calculator_main.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\ro_hp_calculator_main_frame.h">
+      <Filter>Header\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\wxFormBuilder\ro_hp_calculator_main_frame_base.h">
+      <Filter>Header\GUI\wxFormBuilder</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CharacterHpInfo.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ro_hp_calculator.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ro_hp_calculator_main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\ro_hp_calculator_main_frame.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\wxFormBuilder\ro_hp_calculator_main_frame_base.cpp">
+      <Filter>Source\GUI\wxFormBuilder</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ro_hp_calculator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CharacterHpInfo.cpp" />
+  </ItemGroup>
+</Project>
