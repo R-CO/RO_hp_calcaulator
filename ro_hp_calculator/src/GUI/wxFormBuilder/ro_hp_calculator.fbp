@@ -14,6 +14,7 @@
         <property name="file">ro_hp_calculator_main_frame_base</property>
         <property name="first_id">1000</property>
         <property name="help_provider">none</property>
+        <property name="indent_with_spaces"></property>
         <property name="internationalize">1</property>
         <property name="name">RO_hp_calculator</property>
         <property name="namespace">&quot;rco&quot;</property>
@@ -316,7 +317,7 @@
                         <property name="resize">Resizable</property>
                         <property name="show">1</property>
                         <property name="size">620,450</property>
-                        <property name="subclass">; forward_declare</property>
+                        <property name="subclass">rco::RoHpPaintPanel; ../ro_hp_paint_panel.h; forward_declare</property>
                         <property name="toolbar_pane">0</property>
                         <property name="tooltip"></property>
                         <property name="window_extra_style"></property>
@@ -329,7 +330,7 @@
                         <event name="OnKeyUp"></event>
                         <event name="OnKillFocus"></event>
                         <event name="OnLeaveWindow"></event>
-                        <event name="OnLeftDClick">PaintPanelOnLeftDClick</event>
+                        <event name="OnLeftDClick">RoHpPaintPanelOnLeftDClick</event>
                         <event name="OnLeftDown"></event>
                         <event name="OnLeftUp"></event>
                         <event name="OnMiddleDClick"></event>
@@ -337,8 +338,8 @@
                         <event name="OnMiddleUp"></event>
                         <event name="OnMotion"></event>
                         <event name="OnMouseEvents"></event>
-                        <event name="OnMouseWheel">PaintPanelOnMouseWheel</event>
-                        <event name="OnPaint"></event>
+                        <event name="OnMouseWheel">RoHpPaintPanelOnMouseWheel</event>
+                        <event name="OnPaint">RoHpPaintPanelOnPaint</event>
                         <event name="OnRightDClick"></event>
                         <event name="OnRightDown"></event>
                         <event name="OnRightUp"></event>

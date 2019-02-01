@@ -20,8 +20,9 @@ class RoHpCalculatorMainFrame : public RoHpCalculatorMainFrameBase
 protected:
     // Handlers for RoHpCalculatorMainFrameBase events.
     void CharacterChoiceOnChoice(wxCommandEvent& event);
-    void PaintPanelOnLeftDClick(wxMouseEvent& event);
-    void PaintPanelOnMouseWheel(wxMouseEvent& event);
+    void RoHpPaintPanelOnLeftDClick(wxMouseEvent& event);
+    void RoHpPaintPanelOnMouseWheel(wxMouseEvent& event);
+    void RoHpPaintPanelOnPaint(wxPaintEvent& event);
     void VitChoiceOnChoice(wxCommandEvent& event);
     void MhpPercentageChoiceOnChoice(wxCommandEvent& event);
     void ExtraHpTextCtrlOnText(wxCommandEvent& event);

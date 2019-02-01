@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Jun 17 2015)
+// C++ code generated with wxFormBuilder (version May 29 2018)
 // http://www.wxformbuilder.org/
 //
-// PLEASE DO "NOT" EDIT THIS FILE!
+// PLEASE DO *NOT* EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
 #ifndef __RO_HP_CALCULATOR_MAIN_FRAME_BASE_H__
@@ -11,6 +11,8 @@
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/intl.h>
+namespace rco{ class RoHpPaintPanel; }
+
 #include <wx/string.h>
 #include <wx/choice.h>
 #include <wx/gdicmn.h>
@@ -41,7 +43,7 @@ namespace rco
 		protected:
 			wxPanel* m_character_panel;
 			wxChoice* m_character_choice;
-			wxPanel* m_paint_panel;
+			rco::RoHpPaintPanel* m_paint_panel;
 			wxPanel* m_parameter_panel;
 			wxStaticText* m_vit_static_text;
 			wxChoice* m_vit_choice;
@@ -58,8 +60,9 @@ namespace rco
 			
 			// Virtual event handlers, overide them in your derived class
 			virtual void CharacterChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }
-			virtual void PaintPanelOnLeftDClick( wxMouseEvent& event ) { event.Skip(); }
-			virtual void PaintPanelOnMouseWheel( wxMouseEvent& event ) { event.Skip(); }
+			virtual void RoHpPaintPanelOnLeftDClick( wxMouseEvent& event ) { event.Skip(); }
+			virtual void RoHpPaintPanelOnMouseWheel( wxMouseEvent& event ) { event.Skip(); }
+			virtual void RoHpPaintPanelOnPaint( wxPaintEvent& event ) { event.Skip(); }
 			virtual void VitChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }
 			virtual void MhpPercentageChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }
 			virtual void ExtraHpTextCtrlOnText( wxCommandEvent& event ) { event.Skip(); }

@@ -1,6 +1,11 @@
 #include "ro_hp_calculator_main_frame.h"
 
+#include <wx/dcbuffer.h>
+#include <wx/dcclient.h>
 #include <wx/dialog.h>
+#include <wx/msgdlg.h>
+
+#include "ro_hp_paint_panel.h"
 
 #include "../ro_hp_calculator.h"
 
@@ -75,31 +80,47 @@ void rco::RoHpCalculatorMainFrame::CharacterChoiceOnChoice(wxCommandEvent& WXUNU
     CalculateAndSetMaxHp();
 }
 
-void rco::RoHpCalculatorMainFrame::PaintPanelOnLeftDClick(wxMouseEvent& event)
+void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnLeftDClick(wxMouseEvent& event)
 {
     // TODO: Implement PaintPanelOnLeftDClick
+    event;
+    m_paint_panel->Refresh();
 }
 
-void rco::RoHpCalculatorMainFrame::PaintPanelOnMouseWheel(wxMouseEvent& event)
+void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnMouseWheel(wxMouseEvent& event)
 {
     // TODO: Implement PaintPanelOnMouseWheel
+    event;
+    m_paint_panel->Refresh();
+}
+
+void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnPaint(wxPaintEvent& WXUNUSED(event))
+{
+    // TODO:
+    wxAutoBufferedPaintDC dc(m_paint_panel);
+
+    dc.SetBackground(*wxWHITE_BRUSH);
+    dc.Clear();
+    dc.SetPen(*wxBLACK_PEN);
+    dc.DrawLine(0, 0, 50, 50);
 }
 
 void rco::RoHpCalculatorMainFrame::VitChoiceOnChoice(wxCommandEvent& WXUNUSED(event))
 {
-    // TODO: Implement VitChoiceOnChoice
     CalculateAndSetMaxHp();
 }
 
 void rco::RoHpCalculatorMainFrame::MhpPercentageChoiceOnChoice(wxCommandEvent& WXUNUSED(event))
 {
-    // TODO: Implement MhpPercentageChoiceOnChoice
     CalculateAndSetMaxHp();
 }
 
 void rco::RoHpCalculatorMainFrame::ExtraHpTextCtrlOnText(wxCommandEvent& event)
 {
-    // TODO: Implement ExtraHpTextCtrlOnText
+    if (event.GetString().IsEmpty()) {
+        m_extra_hp_text_ctrl->SetValue(wxS("0"));
+    }
+
     if (!event.GetString().IsNumber()) {
         return;
     }
@@ -108,16 +129,15 @@ void rco::RoHpCalculatorMainFrame::ExtraHpTextCtrlOnText(wxCommandEvent& event)
 
 void rco::RoHpCalculatorMainFrame::ExtraHpTextCtrlOnTextEnter(wxCommandEvent& event)
 {
-    // TODO: Implement ExtraHpTextCtrlOnTextEnter
     if (!event.GetString().IsNumber()) {
         return;
     }
     CalculateAndSetMaxHp();
 }
 
-void rco::RoHpCalculatorMainFrame::ExtraHpTextCtrlOnTextMaxLen(wxCommandEvent& event)
+void rco::RoHpCalculatorMainFrame::ExtraHpTextCtrlOnTextMaxLen(wxCommandEvent& WXUNUSED(event))
 {
-    // TODO: Implement ExtraHpTextCtrlOnTextMaxLen
+    wxMessageBox(_("It reached the maximum input digit."));
 }
 
 void rco::RoHpCalculatorMainFrame::ExitMenuItemOnMenuSelection(wxCommandEvent& WXUNUSED(event))
