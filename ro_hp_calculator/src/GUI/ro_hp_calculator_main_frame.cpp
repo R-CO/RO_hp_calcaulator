@@ -1,7 +1,6 @@
 #include "ro_hp_calculator_main_frame.h"
 
 #include <wx/dcbuffer.h>
-#include <wx/dcclient.h>
 #include <wx/dialog.h>
 #include <wx/msgdlg.h>
 
@@ -87,9 +86,9 @@ void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnLeftDClick(wxMouseEvent& even
     m_paint_panel->Refresh();
 }
 
-void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnMouseWheel(wxMouseEvent& event)
+void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnLeftDown(wxMouseEvent& event)
 {
-    // TODO: Implement PaintPanelOnMouseWheel
+    // TODO: Implement RoHpPaintPanelOnLeftDown
     event;
     m_paint_panel->Refresh();
 }
@@ -99,10 +98,14 @@ void rco::RoHpCalculatorMainFrame::RoHpPaintPanelOnPaint(wxPaintEvent& WXUNUSED(
     // TODO:
     wxAutoBufferedPaintDC dc(m_paint_panel);
 
+    const wxBrush& old_background = dc.GetBackground();
     dc.SetBackground(*wxWHITE_BRUSH);
     dc.Clear();
-    dc.SetPen(*wxBLACK_PEN);
-    dc.DrawLine(0, 0, 50, 50);
+    
+    m_paint_panel->DrawBasicLines(dc);
+    m_paint_panel->DrawBasicText(dc);
+
+    dc.SetBackground(old_background);
 }
 
 void rco::RoHpCalculatorMainFrame::VitChoiceOnChoice(wxCommandEvent& WXUNUSED(event))

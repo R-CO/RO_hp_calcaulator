@@ -36,6 +36,9 @@
     <ClInclude Include="src\ro_hp_calculator.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="src\GUI\ro_hp_paint_panel.h">
+      <Filter>Header\GUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ro_hp_calculator_main.cpp">
@@ -51,5 +54,8 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="src\CharacterHpInfo.cpp" />
+    <ClCompile Include="src\GUI\ro_hp_paint_panel.cpp">
+      <Filter>Source\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

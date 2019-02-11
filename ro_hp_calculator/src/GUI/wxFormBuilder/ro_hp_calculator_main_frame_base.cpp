@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version May 29 2018)
+// C++ code generated with wxFormBuilder (version Jun 17 2015)
 // http://www.wxformbuilder.org/
 //
-// PLEASE DO *NOT* EDIT THIS FILE!
+// PLEASE DO "NOT" EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
 #include "../ro_hp_paint_panel.h"
@@ -84,14 +84,7 @@ RoHpCalculatorMainFrameBase::RoHpCalculatorMainFrameBase( wxWindow* parent, wxWi
 	bSizer3->Add( 10, 0, 0, wxEXPAND, 5 );
 	
 	m_extra_hp_text_ctrl = new wxTextCtrl( m_parameter_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_RICH|wxTE_RICH2 );
-	#ifdef __WXGTK__
-	if ( !m_extra_hp_text_ctrl->HasFlag( wxTE_MULTILINE ) )
-	{
-	m_extra_hp_text_ctrl->SetMaxLength( 6 );
-	}
-	#else
-	m_extra_hp_text_ctrl->SetMaxLength( 6 );
-	#endif
+	m_extra_hp_text_ctrl->SetMaxLength( 6 ); 
 	bSizer3->Add( m_extra_hp_text_ctrl, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
 	
 	
@@ -112,7 +105,7 @@ RoHpCalculatorMainFrameBase::RoHpCalculatorMainFrameBase( wxWindow* parent, wxWi
 	
 	m_mhp_static_text = new wxStaticText( m_result_panel, wxID_ANY, _("Final MHP"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_mhp_static_text->Wrap( -1 );
-	m_mhp_static_text->SetFont( wxFont( 16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Comic Sans MS") ) );
+	m_mhp_static_text->SetFont( wxFont( 16, 70, 90, 90, false, wxT("Comic Sans MS") ) );
 	m_mhp_static_text->SetForegroundColour( wxColour( 0, 0, 0 ) );
 	
 	bSizer4->Add( m_mhp_static_text, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
@@ -121,7 +114,7 @@ RoHpCalculatorMainFrameBase::RoHpCalculatorMainFrameBase( wxWindow* parent, wxWi
 	bSizer4->Add( 20, 0, 0, wxEXPAND, 5 );
 	
 	m_final_mhp_text_ctrl = new wxTextCtrl( m_result_panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
-	m_final_mhp_text_ctrl->SetFont( wxFont( 16, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Comic Sans MS") ) );
+	m_final_mhp_text_ctrl->SetFont( wxFont( 16, 70, 90, 90, false, wxT("Comic Sans MS") ) );
 	m_final_mhp_text_ctrl->SetForegroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	
 	bSizer4->Add( m_final_mhp_text_ctrl, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
@@ -161,7 +154,7 @@ RoHpCalculatorMainFrameBase::RoHpCalculatorMainFrameBase( wxWindow* parent, wxWi
 	// Connect Events
 	m_character_choice->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::CharacterChoiceOnChoice ), NULL, this );
 	m_paint_panel->Connect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnLeftDClick ), NULL, this );
-	m_paint_panel->Connect( wxEVT_MOUSEWHEEL, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnMouseWheel ), NULL, this );
+	m_paint_panel->Connect( wxEVT_LEFT_DOWN, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnLeftDown ), NULL, this );
 	m_paint_panel->Connect( wxEVT_PAINT, wxPaintEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnPaint ), NULL, this );
 	m_vit_choice->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::VitChoiceOnChoice ), NULL, this );
 	m_mhp_percentage_choice->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::MhpPercentageChoiceOnChoice ), NULL, this );
@@ -177,7 +170,7 @@ RoHpCalculatorMainFrameBase::~RoHpCalculatorMainFrameBase()
 	// Disconnect Events
 	m_character_choice->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::CharacterChoiceOnChoice ), NULL, this );
 	m_paint_panel->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnLeftDClick ), NULL, this );
-	m_paint_panel->Disconnect( wxEVT_MOUSEWHEEL, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnMouseWheel ), NULL, this );
+	m_paint_panel->Disconnect( wxEVT_LEFT_DOWN, wxMouseEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnLeftDown ), NULL, this );
 	m_paint_panel->Disconnect( wxEVT_PAINT, wxPaintEventHandler( RoHpCalculatorMainFrameBase::RoHpPaintPanelOnPaint ), NULL, this );
 	m_vit_choice->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::VitChoiceOnChoice ), NULL, this );
 	m_mhp_percentage_choice->Disconnect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( RoHpCalculatorMainFrameBase::MhpPercentageChoiceOnChoice ), NULL, this );

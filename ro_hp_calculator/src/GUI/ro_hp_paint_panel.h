@@ -3,6 +3,7 @@
 
 #include <wx/wx.h>
 #include <wx/dcbuffer.h>
+#include <wx/gdicmn.h>
 
 namespace rco {
 
@@ -16,8 +17,12 @@ public:
                    long style = wxTAB_TRAVERSAL | wxNO_BORDER,
                    const wxString& name = wxPanelNameStr);
 
-private:
+    void DrawBasicLines(wxAutoBufferedPaintDC& dc);
+    void DrawBasicText(wxAutoBufferedPaintDC& dc);
 
+private:
+    wxPoint ConvertCordinate(const wxCoord& x, const wxCoord& y) const;
+    wxPoint ConvertCordinate(const wxPoint& position) const;
 }; // end of class "RoHpPaintPanel"
 
 } // end of namespace "rco"

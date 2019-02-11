@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version May 29 2018)
+// C++ code generated with wxFormBuilder (version Jun 17 2015)
 // http://www.wxformbuilder.org/
 //
-// PLEASE DO *NOT* EDIT THIS FILE!
+// PLEASE DO "NOT" EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
 #ifndef __RO_HP_CALCULATOR_MAIN_FRAME_BASE_H__
@@ -61,7 +61,7 @@ namespace rco
 			// Virtual event handlers, overide them in your derived class
 			virtual void CharacterChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }
 			virtual void RoHpPaintPanelOnLeftDClick( wxMouseEvent& event ) { event.Skip(); }
-			virtual void RoHpPaintPanelOnMouseWheel( wxMouseEvent& event ) { event.Skip(); }
+			virtual void RoHpPaintPanelOnLeftDown( wxMouseEvent& event ) { event.Skip(); }
 			virtual void RoHpPaintPanelOnPaint( wxPaintEvent& event ) { event.Skip(); }
 			virtual void VitChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }
 			virtual void MhpPercentageChoiceOnChoice( wxCommandEvent& event ) { event.Skip(); }

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\CharacterHpInfo.cpp" />
     <ClCompile Include="src\GUI\ro_hp_calculator_main_frame.cpp" />
+    <ClCompile Include="src\GUI\ro_hp_paint_panel.cpp" />
     <ClCompile Include="src\GUI\wxFormBuilder\ro_hp_calculator_main_frame_base.cpp" />
     <ClCompile Include="src\ro_hp_calculator.cpp" />
     <ClCompile Include="src\ro_hp_calculator_main.cpp" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="src\CharacterHpInfo.h" />
     <ClInclude Include="src\GUI\ro_hp_calculator_main_frame.h" />
+    <ClInclude Include="src\GUI\ro_hp_paint_panel.h" />
     <ClInclude Include="src\GUI\wxFormBuilder\ro_hp_calculator_main_frame_base.h" />
     <ClInclude Include="src\ro_hp_calculator.h" />
     <ClInclude Include="src\ro_hp_calculator_main.h" />

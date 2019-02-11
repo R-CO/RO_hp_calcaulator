@@ -21,7 +21,7 @@ protected:
     // Handlers for RoHpCalculatorMainFrameBase events.
     void CharacterChoiceOnChoice(wxCommandEvent& event);
     void RoHpPaintPanelOnLeftDClick(wxMouseEvent& event);
-    void RoHpPaintPanelOnMouseWheel(wxMouseEvent& event);
+    void RoHpPaintPanelOnLeftDown(wxMouseEvent& event);
     void RoHpPaintPanelOnPaint(wxPaintEvent& event);
     void VitChoiceOnChoice(wxCommandEvent& event);
     void MhpPercentageChoiceOnChoice(wxCommandEvent& event);
