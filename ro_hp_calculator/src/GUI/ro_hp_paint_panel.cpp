@@ -21,8 +21,8 @@ void rco::RoHpPaintPanel::DrawBasicLines(wxAutoBufferedPaintDC& dc)
 
     const int kMaxX = 560;
     const int kMaxY = 410;
-    dc.DrawLine(ConvertCordinate(0, 0), ConvertCordinate(0, 410)); // verticle basic line
-    dc.DrawLine(ConvertCordinate(0, 0), ConvertCordinate(560, 0)); // horizontal basic line
+    dc.DrawLine(ConvertValueToCordinate(0, 0), ConvertValueToCordinate(0, 410)); // verticle basic line
+    dc.DrawLine(ConvertValueToCordinate(0, 0), ConvertValueToCordinate(560, 0)); // horizontal basic line
 
     const int kSmallScale = 3;
     const int kBigScale = 6;
@@ -31,22 +31,22 @@ void rco::RoHpPaintPanel::DrawBasicLines(wxAutoBufferedPaintDC& dc)
 
     // draw X axis small scale
     for (int index = kSmallGap, multiple = 1; index <= kMaxX; multiple += 2) {
-        dc.DrawLine(ConvertCordinate(index, 0), ConvertCordinate(index, kSmallScale));
+        dc.DrawLine(ConvertValueToCordinate(index, 0), ConvertValueToCordinate(index, kSmallScale));
         index = kSmallGap * multiple;
     }
     // draw X axis big scale
     for (int index = kBigGap, multiple = 1; index <= kMaxX; ++multiple) {
-        dc.DrawLine(ConvertCordinate(index, 0), ConvertCordinate(index, kBigScale));
+        dc.DrawLine(ConvertValueToCordinate(index, 0), ConvertValueToCordinate(index, kBigScale));
         index = kBigGap * multiple;
     }
     // draw Y axis small scale
     for (int index = kSmallGap, multiple = 1; index <= kMaxY; multiple += 2) {
-        dc.DrawLine(ConvertCordinate(0, index), ConvertCordinate(kSmallScale, index));
+        dc.DrawLine(ConvertValueToCordinate(0, index), ConvertValueToCordinate(kSmallScale, index));
         index = kSmallGap * multiple;
     }
     // draw Y axis big scale
     for (int index = kBigGap, multiple = 1; index <= kMaxY; ++multiple) {
-        dc.DrawLine(ConvertCordinate(0, index), ConvertCordinate(kBigScale, index));
+        dc.DrawLine(ConvertValueToCordinate(0, index), ConvertValueToCordinate(kBigScale, index));
         index = kBigGap * multiple;
     }
 
@@ -58,8 +58,8 @@ void rco::RoHpPaintPanel::DrawBasicText(wxAutoBufferedPaintDC & dc)
     const wxColour& old_text_foreground = dc.GetTextForeground();
 
     dc.SetTextForeground(*wxRED);
-    dc.DrawText(wxS("MHP%"), ConvertCordinate(-10, 425));
-    dc.DrawText(wxS("Vit"), ConvertCordinate(565, 10));
+    dc.DrawText(wxS("MHP%"), ConvertValueToCordinate(-10, 425));
+    dc.DrawText(wxS("Vit"), ConvertValueToCordinate(565, 10));
 
     const int kMaxX = 560;
     const int kMaxY = 410;
@@ -68,22 +68,27 @@ void rco::RoHpPaintPanel::DrawBasicText(wxAutoBufferedPaintDC & dc)
     const int kY = 0;
     dc.SetTextForeground(*wxBLACK);
     for (int x = -10; x <= kMaxX; x += kGap) {
-        dc.DrawText(wxString::Format(wxS("%d"), x + kGap - 20), ConvertCordinate(x, kY));
+        dc.DrawText(wxString::Format(wxS("%d"), x + kGap - 20), ConvertValueToCordinate(x, kY));
     }
 
     for (int y = 30; y <= kMaxY; y += kGap) {
-        dc.DrawText(wxString::Format(wxS("%d"), y + kGap - 30), ConvertCordinate(kX, y + 8));
+        dc.DrawText(wxString::Format(wxS("%d"), y + kGap - 30), ConvertValueToCordinate(kX, y + 8));
     }
 
     dc.SetTextForeground(old_text_foreground);
 }
 
-wxPoint rco::RoHpPaintPanel::ConvertCordinate(const wxCoord & x, const wxCoord & y) const
+wxPoint rco::RoHpPaintPanel::ConvertValueToCordinate(const int& vit, const int& mhp_percentage) const
 {
-    return wxPoint(x+20, 430-y);
+    return wxPoint(vit + 20, 430 - mhp_percentage);
 }
 
-wxPoint rco::RoHpPaintPanel::ConvertCordinate(const wxPoint& position) const
+int rco::RoHpPaintPanel::ConvertCordinateXToValue(const wxCoord &x) const
 {
-    return ConvertCordinate(position.x, position.y);
+    return (x - 20);
+}
+
+int rco::RoHpPaintPanel::ConvertCordinateYToValue(const wxCoord& y) const
+{
+    return (y + 430);
 }

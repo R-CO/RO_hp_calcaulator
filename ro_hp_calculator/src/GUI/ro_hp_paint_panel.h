@@ -21,8 +21,9 @@ public:
     void DrawBasicText(wxAutoBufferedPaintDC& dc);
 
 private:
-    wxPoint ConvertCordinate(const wxCoord& x, const wxCoord& y) const;
-    wxPoint ConvertCordinate(const wxPoint& position) const;
+    wxPoint ConvertValueToCordinate(const int& vit, const int& mhp_percentage) const;
+    int ConvertCordinateXToValue(const wxCoord& x) const;
+    int ConvertCordinateYToValue(const wxCoord& y) const;
 }; // end of class "RoHpPaintPanel"
 
 } // end of namespace "rco"
